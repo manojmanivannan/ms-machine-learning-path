@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 import scipy.stats as stats
 
 # Create a function that we can re-use
-def show_distribution(var_data,title):
+def show_distribution(var_data,title,figsize=(10,6)):
     '''
     This function will make a distribution (graph) and display it
     '''
@@ -21,7 +21,7 @@ def show_distribution(var_data,title):
                                                                                             max_val))
 
     # Create a figure for 2 subplots (2 rows, 1 column)
-    fig, ax = plt.subplots(2, 1, figsize = (10,6))
+    fig, ax = plt.subplots(2, 1, figsize = figsize)
 
     # Plot the histogram   
     ax[0].hist(var_data)
@@ -60,7 +60,7 @@ def show_density(var_data,title):
     # Show the figure
     plt.show()
     
-def show_distribution(col, title):
+def show_distribution_curve(col, title):
     # get the density
     density = stats.gaussian_kde(col)
 
